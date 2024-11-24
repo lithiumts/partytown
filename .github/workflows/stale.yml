@@ -24,3 +24,4 @@ jobs:
           close-issue-message: ''
           stale-issue-label: 'stale'
           exempt-issue-labels: 'pinned,security'
+          operations-per-run: 60

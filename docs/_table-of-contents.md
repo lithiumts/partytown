@@ -16,6 +16,7 @@
   - [Astro](/astro)
   - [Gatsby](/gatsby)
   - [HTML](/html)
+  - [Magento 2](/magento2)
   - [Next.js](/nextjs)
   - [Nuxt](/nuxt)
   - [Qwik](https://qwik.builder.io/docs/integrations/partytown/)

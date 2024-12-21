@@ -28,7 +28,7 @@ export const RouterHead = component$(() => {
       <meta
         name="description"
         property="og:description"
-        content={head.frontmatter.description || head.frontmatter.titlen}
+        content={head.frontmatter.description || head.frontmatter.title}
       />
       <meta property="og:site_name" content={head.frontmatter.title} />
 

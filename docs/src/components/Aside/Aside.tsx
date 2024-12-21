@@ -13,12 +13,18 @@ export const Aside = component$(() => {
         return (
           <ul key={idx} class="mb-6">
             <li>
-              <a
-                class="mb-2 block rounded bg-blue-700 px-4 py-1 text-base font-bold uppercase text-white no-underline"
-                href={href}
-              >
-                {title}
-              </a>
+              {href ? (
+                <a
+                  class="mb-2 block rounded bg-blue-700 px-4 py-1 text-base font-bold uppercase text-white no-underline"
+                  href={href}
+                >
+                  {title}
+                </a>
+              ) : (
+                <span class="mb-2 block rounded bg-blue-700 px-4 py-1 text-base font-bold uppercase text-white no-underline">
+                  {text}
+                </span>
+              )}
               {(items || []).map(({ text, href }, idx) => (
                 <ul key={idx}>
                   <li class="py-1 text-black dark:text-white">

@@ -13,7 +13,8 @@ export const RouterHead = component$(() => {
   return (
     <>
       <title>{head.title}</title>
-
+      <meta name="description" content="Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker" />
+            
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

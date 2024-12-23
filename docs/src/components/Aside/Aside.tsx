@@ -21,7 +21,7 @@ export const Aside = component$(() => {
                   {title}
                 </a>
               ) : (
-                <span class="mb-2 block rounded bg-blue-700 px-4 py-1 text-base font-bold uppercase text-white no-underline">
+                <span class="mb-2 block rounded bg-blue-700 dark:bg-blue-600 px-4 py-1 text-base font-bold uppercase text-white no-underline">
                   {text}
                 </span>
               )}

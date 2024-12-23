@@ -1,8 +1,8 @@
 import { cn } from "~/utils/cn";
 import { component$, useSignal, $, useOnWindow } from '@qwik.dev/core';
-import { ContentHeading } from '@qwik.dev/router';
+import type { ContentHeading } from '@qwik.dev/router';
 
-export const TOC = component$(
+export const Toc = component$(
   ({ headings }: { headings: ContentHeading[] }) => {
     if (headings.length === 0) {
       return null;
@@ -106,7 +106,7 @@ type RecursiveListProps = {
 
 const RecursiveList = component$<RecursiveListProps>(
   ({ tree, activeItem, limit = 3 }) => {
-    return tree?.children?.length && tree.level < limit ? (
+    return tree.children.length && tree.level < limit ? (
       <ul class={cn('m-0 list-none', { 'pl-4': tree.level !== 1 })}>
         {tree.children.map((childNode) => (
           <li key={childNode.id} class="mt-0 list-none pt-2">

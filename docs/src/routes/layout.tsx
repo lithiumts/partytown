@@ -6,12 +6,12 @@ import {
   useStore,
   useVisibleTask$,
 } from "@qwik.dev/core";
-import { useLocation, type RequestHandler, useContent } from "@qwik.dev/router";
+import { type RequestHandler, useContent } from "@qwik.dev/router";
 import { Aside } from "~/components/Aside/Aside";
 import { Footer } from "~/components/Footer/Footer";
 import { Header } from "~/components/Header/Header";
 import { components } from "~/components/MdxComponents/MdxComponents";
-import { TOC } from "~/components/Toc/Toc";
+import { Toc } from "~/components/Toc/Toc";
 import { MDXProvider } from "~/state/MDXProvider";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -57,7 +57,7 @@ export default component$(() => {
             <Slot />
             <Footer />
           </article>
-          <TOC headings={headings ?? []} />
+          <Toc headings={headings ?? []} />
         </main>
       </div>
     </MDXProvider>

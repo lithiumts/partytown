@@ -9,12 +9,15 @@ export const RouterHead = component$(() => {
   const loc = useLocation();
 
   const imageSrc = "https://partytown.qwik.dev/partytown-media.png";
+  const description =
+    head.meta.find((m) => m.name === "description")?.content ||
+    `Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker`;
 
   return (
     <>
       <title>{head.title}</title>
-      <meta name="description" content="Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker" />
-            
+      <meta name="description" content={description} />
+
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -29,7 +32,7 @@ export const RouterHead = component$(() => {
       <meta
         name="description"
         property="og:description"
-        content={head.frontmatter.description || head.frontmatter.title}
+        content={description || head.frontmatter.title}
       />
       <meta property="og:site_name" content={head.frontmatter.title} />
 
@@ -38,7 +41,7 @@ export const RouterHead = component$(() => {
       <meta name="twitter:title" content={head.frontmatter.title} />
       <meta
         name="twitter:description"
-        content={head.frontmatter.description || head.frontmatter.title}
+        content={description || head.frontmatter.title}
       />
       <meta name="twitter:image" content={imageSrc} />
       <meta name="twitter:image:alt" content="Partytown Logo" />

@@ -33,6 +33,9 @@ syncCreateMessenger(receiveMessage).then((onMessageHandler) => {
       { name: `Partytown 🎉` }
     );
 
+    //LITHIUM CHANGE
+    (globalThis as any).lithium.partyTownWorker = worker;
+
     worker.onmessage = (ev: MessageEvent<MessageFromWorkerToSandbox>) => {
       const msg: MessageFromWorkerToSandbox = ev.data;
       if (msg[0] === WorkerMessageType.AsyncAccessRequest) {

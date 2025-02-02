@@ -15,6 +15,10 @@ export const initWebWorker = (initWebWorkerData: InitWebWorkerData) => {
   webWorkerCtx.$tabId$ = initWebWorkerData.$tabId$;
 
   (self as any).importScripts = undefined;
+  
+  //LITHIUM CHANGE
+  (self as any).lithium.partyTownWorker.postMessage =   (self as any).postMessage.bind(self);
+
   delete (self as any).postMessage;
   delete (self as any).WorkerGlobalScope;
 
